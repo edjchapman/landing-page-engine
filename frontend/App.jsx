@@ -1,9 +1,8 @@
-import './App.css'
-import TinyMCE from './editor/tiny'
+import "./App.css";
+import TinyMCE from "./editor/tiny";
 
 function App() {
-
-  return <TinyMCE />
+  return <TinyMCE />;
 }
 
-export default App
+export default App;

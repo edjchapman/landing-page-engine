@@ -1,5 +1,5 @@
 import json
-from cfehome.env import config
+from core.env import config
 from django.http import JsonResponse
 from openai import OpenAI
 
