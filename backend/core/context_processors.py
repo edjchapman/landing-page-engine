@@ -1,5 +1,5 @@
 from django.conf import settings
-from core.env import config
+from .env import config
 
 def reactjs_assets_paths(request):
     root_reactjs_dir = settings.BASE_DIR / "staticfiles"
