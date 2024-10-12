@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+
 from .env import config
 from pathlib import Path
-from .env import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY', default=None, cast=str)
+SECRET_KEY = config("SECRET_KEY", default=None, cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -37,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'landing_pages'
+    "landing_pages",
 ]
 
 MIDDLEWARE = [
@@ -53,9 +54,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "core.urls"
 
-REACT_INDEX_DIR =  BASE_DIR / "staticfiles/frontend/prod"
+REACT_INDEX_DIR = BASE_DIR / "staticfiles/frontend/prod"
 if DEBUG:
-    REACT_INDEX_DIR =  BASE_DIR / "staticfiles/frontend/dev"
+    REACT_INDEX_DIR = BASE_DIR / "staticfiles/frontend/dev"
 
 TEMPLATES = [
     {
@@ -69,7 +70,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "core.context_processors.reactjs_assets_paths",
-                "core.context_processors.tiny_api_key"
+                "core.context_processors.tiny_api_key",
             ],
         },
     },
@@ -125,13 +126,11 @@ USE_TZ = True
 
 # nginx, s3 -> django-storages, whitenoise
 STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles'
-]
+STATICFILES_DIRS = [BASE_DIR / "staticfiles"]
 
-STATIC_ROOT = BASE_DIR / 'my-cdn'
+STATIC_ROOT = BASE_DIR / "my-cdn"
 if DEBUG:
-    STATIC_ROOT = BASE_DIR.parent / 'local-cdn'
+    STATIC_ROOT = BASE_DIR.parent / "local-cdn"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

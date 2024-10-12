@@ -3,8 +3,7 @@ from core.env import config
 from django.http import JsonResponse
 from openai import OpenAI
 
-OPENAI_API_KEY = config('OPENAI_API_KEY', default=None)
-
+OPENAI_API_KEY = config("OPENAI_API_KEY", default=None)
 
 
 client = OpenAI(
@@ -15,10 +14,7 @@ client = OpenAI(
 
 def ai_completion_view(request):
     data = json.loads(request.body)
-    model = 'gpt-3.5-turbo'
-    chat_completion = client.chat.completions.create(
-        **data,
-        model=model
-    )
+    model = "gpt-3.5-turbo"
+    chat_completion = client.chat.completions.create(**data, model=model)
     content = chat_completion.choices[0].message.content
-    return JsonResponse({'content': content})
+    return JsonResponse({"content": content})
