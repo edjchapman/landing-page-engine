@@ -2,22 +2,22 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/static/frontend/dev/vite.svg"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-    {% for path in reactjs_assets_js_paths %}
+<head>
+  <meta charset="UTF-8" />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="/static/frontend/dev/vite.svg"
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React</title>
+  {% for path in reactjs_assets_js_paths %}
     <script type="module" crossorigin src="{% static path %}"></script>
-    {% endfor %} {% for path in reactjs_assets_css_paths %}
-    <link rel="stylesheet" crossorigin href="{% static path %}" />
-    {% endfor %}
-  </head>
-  <body>
-    {% block content %} {% endblock content %}
-  </body>
+  {% endfor %} {% for path in reactjs_assets_css_paths %}
+  <link rel="stylesheet" crossorigin href="{% static path %}" />
+{% endfor %}
+</head>
+<body>
+{% block content %} {% endblock content %}
+</body>
 </html>
