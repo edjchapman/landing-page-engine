@@ -2,3 +2,11 @@ Django==5.1.1
 openai==1.49.0
 python-decouple==3.8
 whitenoise==6.7.0
+
+## Linter and Formatter
+# https://pypi.org/project/ruff/
+ruff==0.6.9
+
+## Manage Pre-Commit Hooks
+# https://pypi.org/project/pre-commit/
+pre-commit==4.0.1
